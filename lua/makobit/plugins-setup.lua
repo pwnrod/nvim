@@ -104,7 +104,7 @@ require('lazy').setup({
         end
     },
 
-    -- telescope!
+    -- fuzzy find all the things!
     {
         'nvim-telescope/telescope.nvim', 
         tag = '0.1.2',
@@ -112,5 +112,20 @@ require('lazy').setup({
         config = function()
             require('telescope').setup({})
         end
-}
+    },
+    
+    -- autocompletion
+    { 'hrsh7th/nvim-cmp' },
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/cmp-path' },
+
+    -- snippets
+    { 
+        "L3MON4D3/LuaSnip",
+        version = "2.*",
+        build = "make install_jsregexp"
+    },
+    { 'saadparwaiz1/cmp_luasnip' },
+    { 'rafamadriz/friendly-snippets' },
+    
 })
