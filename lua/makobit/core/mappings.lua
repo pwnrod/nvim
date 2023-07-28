@@ -10,12 +10,12 @@ local kmap = vim.keymap
 kmap.set("n", "x", '"_x')
 
 -- window management
-kmap.set("n", "<leader>w|", "<C-w>v") -- split vertically
-kmap.set("n", "<leader>w-", "<C-w>s") -- split horizontally
-kmap.set("n", "<leader>wh", "<C-w>h") -- move left one window
-kmap.set("n", "<leader>wj", "<C-w>j") -- move down one window
-kmap.set("n", "<leader>wk", "<C-w>k") -- move up one window
-kmap.set("n", "<leader>wl", "<C-w>l") -- move right one window
+kmap.set("n", "<leader>w|", "<C-w>v")     -- split vertically
+kmap.set("n", "<leader>w-", "<C-w>s")     -- split horizontally
+kmap.set("n", "<leader>wh", "<C-w>h")     -- move left one window
+kmap.set("n", "<leader>wj", "<C-w>j")     -- move down one window
+kmap.set("n", "<leader>wk", "<C-w>k")     -- move up one window
+kmap.set("n", "<leader>wl", "<C-w>l")     -- move right one window
 kmap.set("n", "<leader>wx", ":close<CR>") -- close current split
 
 -- quit
@@ -43,6 +43,8 @@ kmap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>")
 kmap.set("n", "<leader>fw", "<cmd>Telescope live_grep<cr>")
 kmap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 kmap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+kmap.set("n", "<leader>fn", "<cmd>Telescope notify<cr>")
+kmap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>")
 kmap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>")
 
 -- lazygit
@@ -50,22 +52,22 @@ kmap.set("n", "<leader>gg", ":LazyGit<CR>")
 
 -- trouble.nvim
 kmap.set("n", "<leader>xx", function()
-	require("trouble").open()
+    require("trouble").open()
 end)
 kmap.set("n", "<leader>xw", function()
-	require("trouble").open("workspace_diagnostics")
+    require("trouble").open("workspace_diagnostics")
 end)
 kmap.set("n", "<leader>xd", function()
-	require("trouble").open("document_diagnostics")
+    require("trouble").open("document_diagnostics")
 end)
 kmap.set("n", "<leader>xl", function()
-	require("trouble").open("quickfix")
+    require("trouble").open("quickfix")
 end)
 kmap.set("n", "<leader>xq", function()
-	require("trouble").open("loclist")
+    require("trouble").open("loclist")
 end)
 kmap.set("n", "gR", function()
-	require("trouble").open("lsp_references")
+    require("trouble").open("lsp_references")
 end)
 
 -- harpoon
@@ -76,14 +78,14 @@ vim.keymap.set("n", "<leader>a", mark.add_file)
 vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
 
 vim.keymap.set("n", "<C-j>", function()
-	ui.nav_file(1)
+    ui.nav_file(1)
 end, { desc = "Jump to that beautiful first file" })
 vim.keymap.set("n", "<c-k>", function()
-	ui.nav_file(2)
+    ui.nav_file(2)
 end, { desc = "Jump to that lovely second file" })
 vim.keymap.set("n", "<c-l>", function()
-	ui.nav_file(3)
+    ui.nav_file(3)
 end, { desc = "Jump to that wonderful third file" })
 vim.keymap.set("n", "<c-;>", function()
-	ui.nav_file(4)
+    ui.nav_file(4)
 end, { desc = "Jump to that cute little fourth file" })
