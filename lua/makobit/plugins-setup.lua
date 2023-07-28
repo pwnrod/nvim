@@ -12,6 +12,22 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- set up a fancy quick-highlight when you yank text
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+local yank_group = augroup("HighlightYank", {})
+
+autocmd("TextYankPost", {
+	group = yank_group,
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({
+			higroup = "IncSearch",
+			timeout = 40,
+		})
+	end,
+})
+
 require("lazy").setup({
 	-- lua functions that many plugins use
 	{ "nvim-lua/plenary.nvim" },
@@ -371,6 +387,13 @@ require("lazy").setup({
 				},
 				auto_install = true,
 			})
+		end,
+	},
+
+	{
+		"smjonas/inc-rename.nvim",
+		config = function()
+			require("inc_rename").setup()
 		end,
 	},
 
