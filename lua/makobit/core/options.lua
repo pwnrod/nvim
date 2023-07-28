@@ -1,41 +1,47 @@
 -- set leader remap before anything else
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 local opt = vim.opt
 
--- Line Numbers
+-- line numbers
 opt.relativenumber = true
 opt.number = true
 
--- Tabs & Indents
+-- tabs & indents
 opt.tabstop = 4
+opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
-opt.autoindent = true
+opt.smartindent = true
 
--- Line Wrapping
+-- line wrapping
 opt.wrap = false
 
--- Search Settings
+-- search settings
 opt.ignorecase = true
 opt.smartcase = true
+opt.hlsearch = false
+opt.incsearch = true
 
--- Cursor Line
+-- cursor line
 opt.cursorline = true
 
--- Appearance
+-- bottom padding
+opt.scrolloff = 8
+
+-- appearance
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 
--- Backspace
+-- backspace
 opt.backspace = "indent,eol,start"
 
--- Clipboard
+-- clipboard
 opt.clipboard:append("unnamedplus")
 
--- Split Windows
+-- split Windows
 opt.splitright = true
 opt.splitbelow = true
 

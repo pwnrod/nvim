@@ -261,6 +261,26 @@ require("lazy").setup({
 					},
 				},
 			})
+
+			lspconfig.jsonls.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+
+			lspconfig.dockerls.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+
+			lspconfig.marksman.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+
+			lspconfig.intelephense.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
 		end,
 	},
 	{ "hrsh7th/cmp-nvim-lsp" },
@@ -289,6 +309,7 @@ require("lazy").setup({
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.prettierd,
 					null_ls.builtins.diagnostics.eslint_d,
+					null_ls.builtins.diagnostics.phpcs,
 				},
 				on_attach = function(client, bufn)
 					if client.supports_method("textDocument/formatting") then
