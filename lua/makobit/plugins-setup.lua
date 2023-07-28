@@ -36,14 +36,14 @@ require("lazy").setup({
 		end,
 	},
 
-	-- get some autopairs
+	-- automatically add closing pairs for things like (), [], '', "", etc.
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		opts = {},
 	},
 
-	-- get some autotags
+	-- automatically add closing tags for html and typescript components
 	{
 		"windwp/nvim-ts-autotag",
 	},
@@ -63,7 +63,7 @@ require("lazy").setup({
 		end,
 	},
 
-	-- very helpful plugin for managing commenting blocks
+	-- helpful commenting utility - `gcc` to comment a line/block
 	{
 		"numToStr/Comment.nvim",
 		config = function()
@@ -321,7 +321,7 @@ require("lazy").setup({
 		end,
 	},
 
-	-- treesitter
+	-- syntax highlighting
 	{
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
@@ -353,7 +353,7 @@ require("lazy").setup({
 		end,
 	},
 
-	-- gitsigns
+	-- colors and symbols in the sidebar for tracking git changes
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
@@ -361,7 +361,7 @@ require("lazy").setup({
 		end,
 	},
 
-	-- lazygit
+	-- add an easy git interface - <leader>gg to pop it open
 	{
 		"kdheepak/lazygit.nvim",
 		dependencies = {
@@ -369,7 +369,7 @@ require("lazy").setup({
 		},
 	},
 
-	-- diagnostic management
+	-- diagnostic management - <leader>xx to see all the errors in the file
 	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
